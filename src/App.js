@@ -1,13 +1,13 @@
 import React from 'react';
-import Counter from './components/Counter.jsx'
-import './App.css';
+import TodoInput from './components/TodoInput'
+import TodoList from './components/TodoList'
 
 const App = () => {
-  return <>
-    <div>
-      <Counter/>
-    </div>
-  </>
+  return <div style={{width: "150px",margin: "0 auto"}}>
+      <TodoInput/>
+      <TodoList/>
+      </div>
+      
 }
 
 export default App;
