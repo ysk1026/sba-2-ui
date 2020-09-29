@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import uuid from uuid.v4
-import {} from 'react-redux'
+import uuid from 'uuid/v4'
+import {useDispatch} from 'react-redux'
 
 const TodoInput = () => {
     // todo가 CRUD 대상(object)입니다. -> 속성이 된다.
@@ -9,10 +9,11 @@ const TodoInput = () => {
     // object { a : 'a', b : () => {} (<- 이건 생략 가능)}, array []
 
     const [todo, setTodo] = useState('') // todo의 타입 결정
+    const dispatch = useDispatch()
     const submitForm = e => {
         e.preventDefault() // default 기능은 막고, 내가 정의한 기능을 구현하라
         const newTodo = {
-            todoId: uuid,
+            todoId: uuid(),
             name : todo,
             complete: false
         }
