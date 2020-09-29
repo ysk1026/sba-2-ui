@@ -1,13 +1,17 @@
 import React from 'react';
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
+import store from './store'
+import { Provider } from 'react-redux'
 
 const App = () => {
-  return <div style={{width: "150px",margin: "0 auto"}}>
+  return <>
+  <Provider store = {store}>
+   <div style={{width: "150px",margin: "0 auto"}}>
       <TodoInput/>
       <TodoList/>
-      </div>
-      
+      </div></Provider>
+  </>    
 }
 
 export default App;

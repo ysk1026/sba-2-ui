@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import uuid from 'uuid/v4'
 import {useDispatch} from 'react-redux'
-
+import {addTodoAction} from '../store/todoReducer'
 const TodoInput = () => {
     // todo가 CRUD 대상(object)입니다. -> 속성이 된다.
     // 함수는 const 타입에 할당함
@@ -19,6 +19,7 @@ const TodoInput = () => {
         }
         addTodo(newTodo)
         setTodo("")
+        document.getElementById('input').value = ''
     }
 
     const handleChange = e => {
@@ -33,7 +34,7 @@ const TodoInput = () => {
     <h1>할일 등록</h1>
     <form onSubmit={submitForm} method='POST'>
         <div>
-            <input type="text" name="todo" onChange={handleChange}/><br/>
+            <input type="text" name="todo" id="input" onChange={handleChange}/><br/>
             <input type="submit" value="ADD TODO"/>
         </div>
     </form>

@@ -27,7 +27,7 @@ const todoReducer = (state = initialState, action) => {
             }
         case "DELETE_TODO":
             return {...state, todos: state.todos.filter(todo => todo.todoId !== action.payload)}
-        
+    
         default:
             return state
     }
